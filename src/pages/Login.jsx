@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext"; // ✅ правильно
+import { useAuth } from "./contexts/AuthContext";
+
 import { Mail, Lock, Eye, EyeOff, AlertCircle } from "lucide-react";
 import "./Login.css";
 

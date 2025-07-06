@@ -1,7 +1,7 @@
 //Admin.jsx
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext"; // ✅ правильно
+import { useAuth } from "./contexts/AuthContext";
 import { ref, push, update, remove, get } from "firebase/database";
 import { db } from "../firebase/config";
 import {
