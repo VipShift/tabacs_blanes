@@ -32,96 +32,10 @@ const Catalog = () => {
           ...snapshot.val()[key],
         }));
         setProducts(productsData);
-      } else {
-        // Fallback to sample data if Firebase is not configured
-        setProducts([
-          {
-            id: 1,
-            name: "Puro Cohiba Behike",
-            image:
-              "https://images.unsplash.com/photo-1592156328697-ee8e5d56b91e?w=400",
-            desc: "Puro premium cubano con sabor intenso y aroma excepcional",
-            price: 45,
-            category: "cigars",
-            stock: 10,
-          },
-          {
-            id: 2,
-            name: "Tabaco de Pipa Dunhill",
-            image:
-              "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=400",
-            desc: "Mezcla clásica inglesa con notas de vainilla y especias",
-            price: 28,
-            category: "pipe",
-            stock: 25,
-          },
-          {
-            id: 3,
-            name: "Cigarrillos Marlboro Gold",
-            image:
-              "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400",
-            desc: "Cigarrillos suaves con filtro premium",
-            price: 8.5,
-            category: "cigarettes",
-            stock: 50,
-          },
-          {
-            id: 4,
-            name: "Encendedor Zippo Clásico",
-            image:
-              "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=400",
-            desc: "Encendedor de fuelle con diseño clásico americano",
-            price: 35,
-            category: "accessories",
-            stock: 15,
-          },
-        ]);
       }
     } catch (error) {
       console.error("Error loading products:", error);
       // Fallback to sample data if Firebase is not configured
-      setProducts([
-        {
-          id: 1,
-          name: "Puro Cohiba Behike",
-          image:
-            "https://images.unsplash.com/photo-1592156328697-ee8e5d56b91e?w=400",
-          desc: "Puro premium cubano con sabor intenso y aroma excepcional",
-          price: 45,
-          category: "cigars",
-          stock: 10,
-        },
-        {
-          id: 2,
-          name: "Tabaco de Pipa Dunhill",
-          image:
-            "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=400",
-          desc: "Mezcla clásica inglesa con notas de vainilla y especias",
-          price: 28,
-          category: "pipe",
-          stock: 25,
-        },
-        {
-          id: 3,
-          name: "Cigarrillos Marlboro Gold",
-          image:
-            "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400",
-          desc: "Cigarrillos suaves con filtro premium",
-          price: 8.5,
-          category: "cigarettes",
-          stock: 50,
-        },
-        {
-          id: 4,
-          name: "Encendedor Zippo Clásico",
-          image:
-            "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=400",
-          desc: "Encendedor de fuelle con diseño clásico americano",
-          price: 35,
-          category: "accessories",
-          stock: 15,
-        },
-      ]);
     } finally {
       setLoading(false);
     }
@@ -151,10 +65,15 @@ const Catalog = () => {
 
   const categories = [
     { value: "", label: "Todas las categorías" },
-    { value: "cigars", label: "Puros" },
-    { value: "pipe", label: "Tabaco de Pipa" },
-    { value: "cigarettes", label: "Cigarrillos" },
-    { value: "accessories", label: "Accesorios" },
+    { value: "tabaco-liado", label: "Tabaco de liar" }, // Табак для самокруток
+    { value: "cigarrillos", label: "Cigarrillos" }, // Сигареты
+    { value: "puros", label: "Puros" }, // Сигары
+    { value: "vapers", label: "Vapers / Desechables" }, // Вейпы
+    { value: "e-liquids", label: "Líquidos para vapers" }, // Жидкости для вейпов
+    { value: "filtros", label: "Filtros" }, // Фильтры
+    { value: "papel", label: "Papel de fumar" }, // Бумага для самокруток
+    { value: "mecheros", label: "Mecheros y encendedores" }, // Зажигалки
+    { value: "accesorios", label: "Accesorios de fumador" }, // Аксессуары
   ];
 
   if (loading) {

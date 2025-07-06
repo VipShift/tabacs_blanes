@@ -35,8 +35,7 @@ const Header = () => {
               <span className="logo-text">T</span>
             </div>
             <div className="logo-info">
-              <h1 className="logo-title">Tabacos España</h1>
-              <p className="logo-subtitle">Premium Tobacco Shop</p>
+              <h1 className="logo-title">Tabacos</h1>
             </div>
           </Link>
 

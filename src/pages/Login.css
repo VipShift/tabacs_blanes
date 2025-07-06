@@ -219,26 +219,3 @@
   color: #f59e0b;
 }
 
-/* Демо-учетные данные */
-.demo-credentials {
-  margin-top: 24px;
-  text-align: center;
-}
-
-.demo-container {
-  background: rgba(245, 158, 11, 0.1);
-  border: 1px solid rgba(245, 158, 11, 0.2);
-  border-radius: 8px;
-  padding: 16px;
-}
-
-.demo-title {
-  color: #f59e0b;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
-.demo-text {
-  color: #d1d5db;
-  font-size: 14px;
-} 

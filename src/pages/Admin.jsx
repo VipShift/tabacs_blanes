@@ -1,7 +1,7 @@
 //Admin.jsx
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "./contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 import { ref, push, update, remove, get } from "firebase/database";
 import { db } from "../firebase/config";
 import {
@@ -38,6 +38,7 @@ const Admin = () => {
       navigate("/login");
       return;
     }
+
     loadProducts();
   }, [currentUser, navigate]);
 
@@ -155,10 +156,16 @@ const Admin = () => {
   };
 
   const categories = [
-    { value: "cigars", label: "Puros" },
-    { value: "pipe", label: "Tabaco de Pipa" },
-    { value: "cigarettes", label: "Cigarrillos" },
-    { value: "accessories", label: "Accesorios" },
+    { value: "", label: "Todas las categorías" },
+    { value: "tabaco-liado", label: "Tabaco de liar" }, // Табак для самокруток
+    { value: "cigarrillos", label: "Cigarrillos" }, // Сигареты
+    { value: "puros", label: "Puros" }, // Сигары
+    { value: "vapers", label: "Vapers / Desechables" }, // Вейпы
+    { value: "e-liquids", label: "Líquidos para vapers" }, // Жидкости для вейпов
+    { value: "filtros", label: "Filtros" }, // Фильтры
+    { value: "papel", label: "Papel de fumar" }, // Бумага для самокруток
+    { value: "mecheros", label: "Mecheros y encendedores" }, // Зажигалки
+    { value: "accesorios", label: "Accesorios de fumador" }, // Аксессуары
   ];
 
   if (loading) {

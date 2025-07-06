@@ -1,35 +1,36 @@
-import { Leaf, Award, Truck, Users, Clock, MapPin } from "lucide-react";
+import { Leaf, Award, Truck, Users, Clock } from "lucide-react";
 import "./About.css";
 
 const About = () => {
   const features = [
     {
       icon: <Leaf className="feature-icon" />,
-      title: "100% Natural",
-      description: "Tabaco cultivado sin químicos ni aditivos artificiales",
+      title: "Productos Oficiales",
+      description:
+        "Todos los artículos provienen de distribuidores legales y regulados.",
     },
     {
       icon: <Award className="feature-icon" />,
-      title: "Calidad Premium",
-      description: "Los mejores productos seleccionados cuidadosamente",
+      title: "Atención de Confianza",
+      description: "Servicio amable y profesional con 4,8★ en Google.",
     },
     {
       icon: <Truck className="feature-icon" />,
-      title: "Envío Rápido",
-      description: "Entrega en 24-48 horas en toda España",
+      title: "Ubicación Céntrica",
+      description: "Estamos en el centro de Blanes, cerca de todo.",
     },
     {
       icon: <Users className="feature-icon" />,
-      title: "Atención Personalizada",
-      description: "Servicio al cliente excepcional",
+      title: "Clientes Recurrentes",
+      description: "Más de 20 años sirviendo a vecinos y turistas.",
     },
   ];
 
   const stats = [
-    { number: "1985", label: "Año de Fundación" },
-    { number: "10,000+", label: "Clientes Satisfechos" },
-    { number: "500+", label: "Productos Premium" },
-    { number: "24/7", label: "Soporte Disponible" },
+    { number: "2003", label: "Año de Apertura" },
+    { number: "4,8 ★", label: "Valoración en Google" },
+    { number: "21+", label: "Opiniones Positivas" },
+    { number: "100%", label: "Legal y Certificado" },
   ];
 
   return (
@@ -37,11 +38,12 @@ const About = () => {
       <div className="about-content">
         {/* Hero Section */}
         <div className="hero-section">
-          <h1 className="hero-title">Sobre Tabacos España</h1>
+          <h1 className="hero-title">Sobre Estanc Roca</h1>
           <p className="hero-subtitle">
-            Desde 1985, hemos sido los guardianes de la tradición tabacalera
-            española. Nuestros productos son seleccionados cuidadosamente de las
-            mejores regiones productoras de España y el mundo.
+            En Estanc Roca, ofrecemos productos oficiales de tabaco, puros,
+            papel, mecheros y más. Estamos ubicados en Carrer de la Muralla, 46
+            — el corazón de Blanes. Más de 20 años de experiencia, con atención
+            amable, confianza y productos regulados por el Estado.
           </p>
         </div>
 
@@ -58,7 +60,7 @@ const About = () => {
 
         {/* Stats Section */}
         <div className="stats-section">
-          <h2 className="stats-title">Nuestros Números</h2>
+          <h2 className="stats-title">Nuestros Datos</h2>
           <div className="stats-grid">
             {stats.map((stat, index) => (
               <div key={index} className="stat-item">
@@ -75,24 +77,19 @@ const About = () => {
             <h2 className="story-title">Nuestra Historia</h2>
             <div className="story-text">
               <p>
-                Fundada en 1985 en el corazón de Madrid, Tabacos España nació de
-                la pasión por la tradición tabacalera y el compromiso con la
-                calidad. Nuestro fundador, Don Carlos Rodríguez, comenzó con una
-                pequeña tienda en la Calle Mayor, trayendo los mejores tabacos
-                de Cuba y las regiones productoras de España.
+                Fundado en 2003, Estanc Roca ha sido un referente en Blanes por
+                su trato cercano y su compromiso con la calidad. Inició como un
+                pequeño estanco familiar y ha crecido gracias a la fidelidad de
+                sus clientes.
               </p>
               <p>
-                A lo largo de más de tres décadas, hemos mantenido los mismos
-                valores de excelencia y atención al detalle que nos
-                caracterizaron desde el primer día. Cada producto en nuestro
-                catálogo ha sido cuidadosamente seleccionado para ofrecer la
-                mejor experiencia a nuestros clientes.
+                Con más de 20 años de servicio, mantenemos una oferta variada de
+                tabacos, accesorios y artículos de fumador. Atendemos en
+                español, catalán, ruso y ucraniano.
               </p>
               <p>
-                Hoy, seguimos siendo una empresa familiar que combina la
-                tradición con la innovación, ofreciendo no solo productos de la
-                más alta calidad, sino también un servicio personalizado que
-                hace que cada visita sea especial.
+                Nuestro objetivo: cercanía, honestidad y cumplimiento con la
+                normativa vigente.
               </p>
             </div>
           </div>
@@ -101,17 +98,17 @@ const About = () => {
             <div className="hours-content">
               <div className="hours-header">
                 <Clock className="hours-icon" />
-                <h3 className="hours-title">Horario de Atención</h3>
+                <h3 className="hours-title">Horario Comercial</h3>
               </div>
               <div className="hours-schedule">
                 <p>
-                  <strong>Lunes - Viernes:</strong> 9:00 - 20:00
+                  <strong>Lunes - Viernes:</strong> 09:00 - 20:00
                 </p>
                 <p>
                   <strong>Sábados:</strong> 10:00 - 18:00
                 </p>
                 <p>
-                  <strong>Domingos:</strong> 12:00 - 16:00
+                  <strong>Domingos:</strong> Cerrado
                 </p>
               </div>
             </div>
@@ -126,10 +123,9 @@ const About = () => {
               <div className="value-icon-container">
                 <Leaf className="value-icon" />
               </div>
-              <h3 className="value-name">Tradición</h3>
+              <h3 className="value-name">Legalidad</h3>
               <p className="value-description">
-                Respetamos y mantenemos las tradiciones centenarias de la
-                tabacalera española
+                Cumplimos con todas las normativas del estanco estatal español.
               </p>
             </div>
 
@@ -139,8 +135,7 @@ const About = () => {
               </div>
               <h3 className="value-name">Calidad</h3>
               <p className="value-description">
-                Solo ofrecemos productos de la más alta calidad, probados y
-                verificados
+                Selección de productos premium y servicio cercano al cliente.
               </p>
             </div>
 
@@ -148,10 +143,10 @@ const About = () => {
               <div className="value-icon-container">
                 <Users className="value-icon" />
               </div>
-              <h3 className="value-name">Cliente</h3>
+              <h3 className="value-name">Confianza</h3>
               <p className="value-description">
-                Nuestros clientes son nuestra prioridad, ofrecemos atención
-                personalizada
+                Más de dos décadas sirviendo con honestidad a la comunidad local
+                y turistas.
               </p>
             </div>
           </div>

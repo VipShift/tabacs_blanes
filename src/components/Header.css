@@ -52,16 +52,13 @@
 }
 .logo-title {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 800;
   background: linear-gradient(90deg, #f59e0b, #ea580c);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-.logo-subtitle {
-  font-size: 12px;
-  color: #9ca3af;
-}
+
 
 /* Навигация (десктоп) */
 .desktop-nav {

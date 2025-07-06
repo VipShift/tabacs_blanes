@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "./contexts/AuthContext";
-
+import { useAuth } from "../contexts/AuthContext";
 import { Mail, Lock, Eye, EyeOff, AlertCircle } from "lucide-react";
 import "./Login.css";
 
@@ -63,7 +62,7 @@ const Login = () => {
                 Correo Electrónico
               </label>
               <div className="input-container">
-                <Mail className="input-icon" size={20} />
+                <Mail className="input-icon" size={0} />
                 <input
                   id="email"
                   type="email"
@@ -82,7 +81,7 @@ const Login = () => {
                 Contraseña
               </label>
               <div className="input-container">
-                <Lock className="input-icon" size={20} />
+                <Lock className="input-icon" size={0} />
                 <input
                   id="password"
                   type={showPassword ? "text" : "password"}
@@ -120,18 +119,6 @@ const Login = () => {
             <Link to="/" className="back-link-text">
               ← Volver al catálogo
             </Link>
-          </div>
-        </div>
-
-        {/* Demo Credentials */}
-        <div className="demo-credentials">
-          <div className="demo-container">
-            <h3 className="demo-title">Credenciales de Demo</h3>
-            <p className="demo-text">
-              Email: admin@tabacosespana.es
-              <br />
-              Contraseña: admin123
-            </p>
           </div>
         </div>
       </div>
