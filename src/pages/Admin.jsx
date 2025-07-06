@@ -1,4 +1,3 @@
-//Admin.jsx
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
@@ -95,7 +94,7 @@ const Admin = () => {
       !formData.stock ||
       !formData.image
     ) {
-      alert("Por favor completa todos los campos");
+      alert("Пожалуйста, заполните все поля");
       return;
     }
 
@@ -108,22 +107,20 @@ const Admin = () => {
       };
 
       if (editingProduct) {
-        // Update existing product
         const productRef = ref(db, `products/${editingProduct.id}`);
         await update(productRef, productData);
-        alert("Producto actualizado exitosamente");
+        alert("Продукт успешно обновлен");
       } else {
-        // Add new product
         const productsRef = ref(db, "products");
         await push(productsRef, productData);
-        alert("Producto añadido exitosamente");
+        alert("Продукт успешно добавлен");
       }
 
       resetForm();
       loadProducts();
     } catch (error) {
-      console.error("Error saving product:", error);
-      alert("Error al guardar el producto");
+      console.error("Ошибка при сохранении продукта:", error);
+      alert("Ошибка при сохранении продукта");
     }
   };
 
@@ -140,32 +137,30 @@ const Admin = () => {
   };
 
   const handleDelete = async (productId) => {
-    if (
-      window.confirm("¿Estás seguro de que quieres eliminar este producto?")
-    ) {
+    if (window.confirm("Вы уверены, что хотите удалить этот продукт?")) {
       try {
         const productRef = ref(db, `products/${productId}`);
         await remove(productRef);
-        alert("Producto eliminado exitosamente");
+        alert("Продукт успешно удален");
         loadProducts();
       } catch (error) {
-        console.error("Error deleting product:", error);
-        alert("Error al eliminar el producto");
+        console.error("Ошибка при удалении продукта:", error);
+        alert("Ошибка при удалении продукта");
       }
     }
   };
 
   const categories = [
-    { value: "", label: "Todas las categorías" },
-    { value: "tabaco-liado", label: "Tabaco de liar" }, // Табак для самокруток
-    { value: "cigarrillos", label: "Cigarrillos" }, // Сигареты
-    { value: "puros", label: "Puros" }, // Сигары
-    { value: "vapers", label: "Vapers / Desechables" }, // Вейпы
-    { value: "e-liquids", label: "Líquidos para vapers" }, // Жидкости для вейпов
-    { value: "filtros", label: "Filtros" }, // Фильтры
-    { value: "papel", label: "Papel de fumar" }, // Бумага для самокруток
-    { value: "mecheros", label: "Mecheros y encendedores" }, // Зажигалки
-    { value: "accesorios", label: "Accesorios de fumador" }, // Аксессуары
+    { value: "", label: "Все категории" },
+    { value: "tabaco-liado", label: "Табак для самокруток" },
+    { value: "cigarrillos", label: "Сигареты" },
+    { value: "puros", label: "Сигары" },
+    { value: "vapers", label: "Вейпы" },
+    { value: "e-liquids", label: "Жидкости для вейпов" },
+    { value: "filtros", label: "Фильтры" },
+    { value: "papel", label: "Бумага для самокруток" },
+    { value: "mecheros", label: "Зажигалки" },
+    { value: "accesorios", label: "Аксессуары" },
   ];
 
   if (loading) {
@@ -183,23 +178,23 @@ const Admin = () => {
   return (
     <div className="admin-container">
       <div className="admin-content">
-        {/* Header */}
         <div className="admin-header">
           <div>
-            <h1 className="admin-title">Panel de Administración</h1>
-            <p className="admin-subtitle">Gestiona tu catálogo de productos</p>
+            <h1 className="admin-title">Админпанель</h1>
+            <p className="admin-subtitle">Управление товарами</p>
           </div>
           <div className="admin-user-info">
-            <p className="user-welcome">Bienvenido, {currentUser?.email}</p>
+            <p className="user-welcome">
+              Добро пожаловать, {currentUser?.email}
+            </p>
           </div>
         </div>
 
         <div className="admin-grid">
-          {/* Form Section */}
           <div className="admin-form-section">
             <h2 className="form-title">
               <Plus size={24} className="form-icon" />
-              {editingProduct ? "Editar Producto" : "Añadir Producto"}
+              {editingProduct ? "Редактировать товар" : "Добавить товар"}
             </h2>
 
             <form onSubmit={handleSubmit} className="admin-form">
@@ -207,7 +202,7 @@ const Admin = () => {
                 <div className="form-field">
                   <label className="form-label">
                     <Package size={16} className="label-icon" />
-                    Nombre del Producto
+                    Название товара
                   </label>
                   <input
                     type="text"
@@ -215,7 +210,7 @@ const Admin = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     className="form-input"
-                    placeholder="Ej: Puro Cohiba Behike"
+                    placeholder="Например: Cohiba Behike"
                     required
                   />
                 </div>
@@ -223,7 +218,7 @@ const Admin = () => {
                 <div className="form-field">
                   <label className="form-label">
                     <DollarSign size={16} className="label-icon" />
-                    Precio (€)
+                    Цена (€)
                   </label>
                   <input
                     type="number"
@@ -241,7 +236,7 @@ const Admin = () => {
               <div className="form-field">
                 <label className="form-label">
                   <FileText size={16} className="label-icon" />
-                  Descripción
+                  Описание
                 </label>
                 <textarea
                   name="desc"
@@ -249,14 +244,14 @@ const Admin = () => {
                   onChange={handleInputChange}
                   rows="3"
                   className="form-textarea"
-                  placeholder="Descripción detallada del producto..."
+                  placeholder="Подробное описание товара..."
                   required
                 />
               </div>
 
               <div className="form-row">
                 <div className="form-field">
-                  <label className="form-label">Categoría</label>
+                  <label className="form-label">Категория</label>
                   <select
                     name="category"
                     value={formData.category}
@@ -264,7 +259,7 @@ const Admin = () => {
                     className="form-select"
                     required
                   >
-                    <option value="">Seleccionar categoría</option>
+                    <option value="">Выбрать категорию</option>
                     {categories.map((category) => (
                       <option
                         key={category.value}
@@ -280,7 +275,7 @@ const Admin = () => {
                 <div className="form-field">
                   <label className="form-label">
                     <Hash size={16} className="label-icon" />
-                    Stock
+                    Остаток на складе
                   </label>
                   <input
                     type="number"
@@ -297,7 +292,7 @@ const Admin = () => {
               <div className="form-field">
                 <label className="form-label">
                   <ImageIcon size={16} className="label-icon" />
-                  URL de la Imagen
+                  URL изображения
                 </label>
                 <input
                   type="url"
@@ -305,15 +300,22 @@ const Admin = () => {
                   value={formData.image}
                   onChange={handleInputChange}
                   className="form-input"
-                  placeholder="https://ejemplo.com/imagen.jpg"
+                  placeholder="https://example.com/image.jpg"
                   required
                 />
+                {formData.image && (
+                  <img
+                    src={formData.image}
+                    alt="preview"
+                    style={{ maxWidth: "150px", marginTop: "10px" }}
+                  />
+                )}
               </div>
 
               <div className="form-buttons">
                 <button type="submit" className="btn-primary">
                   <Save size={16} className="btn-icon" />
-                  {editingProduct ? "Actualizar" : "Añadir"}
+                  {editingProduct ? "Обновить" : "Добавить"}
                 </button>
 
                 {editingProduct && (
@@ -323,21 +325,20 @@ const Admin = () => {
                     className="btn-secondary"
                   >
                     <X size={16} className="btn-icon" />
-                    Cancelar
+                    Отмена
                   </button>
                 )}
               </div>
             </form>
           </div>
 
-          {/* Products List */}
           <div className="products-section">
-            <h2 className="products-title">Productos ({products.length})</h2>
+            <h2 className="products-title">Товары ({products.length})</h2>
 
             {products.length === 0 ? (
               <div className="empty-products">
                 <Package className="empty-icon" />
-                <p className="empty-text">No hay productos en el catálogo</p>
+                <p>Каталог пуст</p>
               </div>
             ) : (
               <div className="products-list">
@@ -352,7 +353,7 @@ const Admin = () => {
                             {product.price} €
                           </span>
                           <span className="product-stock">
-                            Stock: {product.stock}
+                            Остаток: {product.stock}
                           </span>
                           <span className="product-category">
                             {product.category}
@@ -365,13 +366,13 @@ const Admin = () => {
                           onClick={() => handleEdit(product)}
                           className="btn-edit"
                         >
-                          <Edit size={16} className="action-icon" />
+                          <Edit size={16} />
                         </button>
                         <button
                           onClick={() => handleDelete(product.id)}
                           className="btn-delete"
                         >
-                          <Trash2 size={16} className="action-icon" />
+                          <Trash2 size={16} />
                         </button>
                       </div>
                     </div>
