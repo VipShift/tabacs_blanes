@@ -1,0 +1,244 @@
+/* Login.css - Стили для страницы входа */
+
+/* Основной контейнер */
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #000000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.login-content {
+  max-width: 448px;
+  width: 100%;
+}
+
+/* Заголовок */
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(to right, #f59e0b, #ea580c);
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.logo-text {
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.login-title {
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(to right, #f59e0b, #ea580c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.login-subtitle {
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+/* Контейнер формы */
+.login-form-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Сообщение об ошибке */
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 8px;
+  color: #f87171;
+}
+
+.error-text {
+  font-size: 14px;
+}
+
+/* Поля формы */
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #d1d5db;
+  margin-bottom: 8px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  margin: 0;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px 12px 56px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 1px #f59e0b;
+}
+
+.password-input {
+  padding-right: 48px;
+  padding-left: 56px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: white;
+}
+
+/* Кнопка отправки */
+.submit-button {
+  width: 100%;
+  padding: 12px 16px;
+  background: linear-gradient(to right, #f59e0b, #ea580c);
+  color: white;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: linear-gradient(to right, #d97706, #dc2626);
+}
+
+.submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f59e0b, 0 0 0 4px rgba(245, 158, 11, 0.1);
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Контейнер загрузки */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-bottom: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Ссылка назад */
+.back-link {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.back-link-text {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.back-link-text:hover {
+  color: #f59e0b;
+}
+
+/* Демо-учетные данные */
+.demo-credentials {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.demo-container {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.demo-title {
+  color: #f59e0b;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.demo-text {
+  color: #d1d5db;
+  font-size: 14px;
+} 

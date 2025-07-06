@@ -1,0 +1,311 @@
+/* About.css - Стили для страницы "О нас" */
+
+/* Основной контейнер */
+.about-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #000000 100%);
+  padding-top: 80px;
+}
+
+.about-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+
+@media (min-width: 640px) {
+  .about-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-content {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Hero секция */
+.hero-section {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(to right, #f59e0b, #ea580c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 60px;
+  }
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: #d1d5db;
+  max-width: 1024px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Сетка функций */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(245, 158, 11, 0.3);
+  transform: scale(1.05);
+}
+
+.feature-icon-container {
+  color: #f59e0b;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.feature-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.feature-description {
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Секция статистики */
+.stats-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 64px;
+}
+
+.stats-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: #f59e0b;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .stat-number {
+    font-size: 48px;
+  }
+}
+
+.stat-label {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* Секция истории */
+.story-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+@media (min-width: 1024px) {
+  .story-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.story-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.story-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.story-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #d1d5db;
+  line-height: 1.6;
+}
+
+.story-text p {
+  margin: 0;
+}
+
+/* Карточка часов работы */
+.hours-card {
+  position: relative;
+}
+
+.hours-content {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(234, 88, 12, 0.2));
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.hours-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.hours-icon {
+  width: 64px;
+  height: 64px;
+  color: #f59e0b;
+  margin: 0 auto 16px;
+}
+
+.hours-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.hours-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #d1d5db;
+}
+
+.hours-schedule p {
+  margin: 0;
+}
+
+/* Секция ценностей */
+.values-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.values-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.value-item {
+  text-align: center;
+}
+
+.value-icon-container {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(to right, #f59e0b, #ea580c);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.value-icon {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+.value-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.value-description {
+  color: #9ca3af;
+} 

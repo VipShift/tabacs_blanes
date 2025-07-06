@@ -1,0 +1,389 @@
+/* Admin.css - Стили для панели администратора */
+
+/* Основной контейнер */
+.admin-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #000000 100%);
+  padding-top: 80px;
+}
+
+.admin-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+
+@media (min-width: 640px) {
+  .admin-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .admin-content {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Загрузка */
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 256px;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 2px solid transparent;
+  border-bottom: 2px solid #f59e0b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Заголовок */
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.admin-title {
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(to right, #f59e0b, #ea580c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.admin-subtitle {
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+.admin-user-info {
+  text-align: right;
+}
+
+.user-welcome {
+  color: #d1d5db;
+}
+
+/* Сетка */
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .admin-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Секция формы */
+.admin-form-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.form-icon {
+  margin-right: 8px;
+}
+
+/* Форма */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #d1d5db;
+  margin-bottom: 8px;
+}
+
+.label-icon {
+  display: inline;
+  margin-right: 4px;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #9ca3af;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #f59e0b;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.select-option {
+  background: #374151;
+  color: white;
+}
+
+/* Кнопки формы */
+.form-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-primary {
+  flex: 1;
+  padding: 8px 16px;
+  background: linear-gradient(to right, #f59e0b, #ea580c);
+  color: white;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #d97706, #dc2626);
+}
+
+.btn-secondary {
+  padding: 8px 16px;
+  border: 1px solid #4b5563;
+  color: #d1d5db;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-secondary:hover {
+  background: #374151;
+}
+
+.btn-icon {
+  margin-right: 8px;
+}
+
+/* Секция продуктов */
+.products-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.products-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 24px;
+}
+
+/* Пустое состояние */
+.empty-products {
+  text-align: center;
+  padding: 32px 0;
+}
+
+.empty-icon {
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;
+  color: #9ca3af;
+  margin-bottom: 16px;
+}
+
+.empty-text {
+  color: #9ca3af;
+}
+
+/* Список продуктов */
+.products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 384px;
+  overflow-y: auto;
+}
+
+.product-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.product-item:hover {
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.product-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  color: white;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.product-description {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.product-details {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.product-price {
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+.product-stock {
+  color: #9ca3af;
+}
+
+.product-category {
+  padding: 2px 8px;
+  background: #374151;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #d1d5db;
+}
+
+.product-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 16px;
+}
+
+.btn-edit {
+  padding: 8px;
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-edit:hover {
+  background: #1d4ed8;
+}
+
+.btn-delete {
+  padding: 8px;
+  background: #dc2626;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-delete:hover {
+  background: #b91c1c;
+}
+
+.action-icon {
+  color: white;
+}
+
+/* Скроллбар для списка продуктов */
+.products-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.products-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.products-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.products-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+} 
